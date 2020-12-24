@@ -48,10 +48,10 @@ def main():
     args = parser.parse_args()
 
 
-    assert args.show or (args.out_img_root != '')
-
-
-    cv2.namedWindow("result", cv2.WINDOW_NORMAL)
+    assert (len(args.input_image_path) == "") or (len(args.input_movie_path) == "")
+    
+    if args.show:
+        cv2.namedWindow("result", cv2.WINDOW_NORMAL)
 
     print(args.pose_config, modelList[str(pathlib.Path(args.pose_config).name)])
 
