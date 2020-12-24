@@ -2,16 +2,16 @@
 
 ### Requirements
 
-- Linux (Windows is not officially supported)
-- Python 3.6+
-- PyTorch 1.3+
-- CUDA 9.2+ (If you build PyTorch from source, CUDA 9.0 is also compatible)
+- Windows
+- Python 3.6
+- PyTorch 1.7.0
+- CUDA 10.2
 - GCC 5+
-- [mmcv](https://github.com/open-mmlab/mmcv) (Please install the latest version of mmcv-full)
+- mmcv
 - Numpy
 - cv2
 - json_tricks
-- [xtcocotools](https://github.com/jin-s13/xtcocoapi)
+- pycocotools
 
 Optional:
 
@@ -82,13 +82,15 @@ Note:
 Here is a full script for setting up mmpose with conda and link the dataset path (supposing that your COCO dataset path is $COCO_ROOT).
 
 ```shell
-conda create -n open-mmlab python=3.7 -y
+conda create -n open-mmlab python=3.6 -y
 conda activate open-mmlab
-
-conda install -c pytorch pytorch torchvision -y
+conda install pytorch=1.7.0 cudatoolkit=10.1 torchvision -c pytorch
 git clone git@github.com:open-mmlab/mmpose.git
+
 cd mmpose
 pip install -r requirements.txt
+conda install -c conda-forge shapely
+pip install mmcv mmdet
 python setup.py develop
 
 ```
