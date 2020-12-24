@@ -84,7 +84,7 @@ Here is a full script for setting up mmpose with conda and link the dataset path
 ```shell
 conda create -n open-mmlab python=3.6 -y
 conda activate open-mmlab
-conda install pytorch=1.7.0 cudatoolkit=10.1 torchvision -c pytorch
+conda install pytorch=1.7.0 cudatoolkit=10.2 torchvision -c pytorch
 git clone git@github.com:open-mmlab/mmpose.git
 
 cd mmpose
