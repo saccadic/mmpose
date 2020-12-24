@@ -82,17 +82,15 @@ Note:
 Here is a full script for setting up mmpose with conda and link the dataset path (supposing that your COCO dataset path is $COCO_ROOT).
 
 ```shell
-conda create -n mmpose python=3.8 -y
+conda create -n mmpose python=3.6 -y
 conda activate mmpose 
 conda install pytorch=1.7.0 cudatoolkit=10.2 torchvision -c pytorch -y
 git clone https://github.com/saccadic/mmpose.git
-git checkout windows
-
 cd mmpose
+git checkout windows
 pip install -r requirements.txt
 conda install -c conda-forge shapely -y
 pip install mmcv mmdet
-
 python setup.py develop
 
 ```
