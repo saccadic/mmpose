@@ -48,7 +48,9 @@ def main():
     args = parser.parse_args()
 
 
-    assert (len(args.input_image_path) == "") or (len(args.input_movie_path) == "")
+    if (args.input_image_path == "") and (args.input_movie_path == ""):
+        print("Please input a image or movie file.")
+        exit()
     
     if args.show:
         cv2.namedWindow("result", cv2.WINDOW_NORMAL)
