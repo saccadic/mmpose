@@ -1,6 +1,6 @@
 import numpy as np
-from xtcocotools.coco import COCO
-from xtcocotools.cocoeval import COCOeval
+from pycocotools.coco import COCO
+from pycocotools.cocoeval import COCOeval
 
 from mmpose.datasets.builder import DATASETS
 from .bottom_up_coco import BottomUpCocoDataset

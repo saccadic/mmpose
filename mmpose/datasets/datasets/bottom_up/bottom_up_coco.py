@@ -3,9 +3,9 @@ from collections import OrderedDict, defaultdict
 
 import json_tricks as json
 import numpy as np
-import xtcocotools
-from xtcocotools.coco import COCO
-from xtcocotools.cocoeval import COCOeval
+import pycocotools
+from pycocotools.coco import COCO
+from pycocotools.cocoeval import COCOeval
 
 from mmpose.datasets.builder import DATASETS
 from .bottom_up_base_dataset import BottomUpBaseDataset
@@ -189,16 +189,16 @@ class BottomUpCocoDataset(BottomUpBaseDataset):
         for obj in anno:
             if 'segmentation' in obj:
                 if obj['iscrowd']:
-                    rle = xtcocotools.mask.frPyObjects(obj['segmentation'],
+                    rle = pycocotools.mask.frPyObjects(obj['segmentation'],
                                                        img_info['height'],
                                                        img_info['width'])
-                    m += xtcocotools.mask.decode(rle)
+                    m += pycocotools.mask.decode(rle)
                 elif obj['num_keypoints'] == 0:
-                    rles = xtcocotools.mask.frPyObjects(
+                    rles = pycocotools.mask.frPyObjects(
                         obj['segmentation'], img_info['height'],
                         img_info['width'])
                     for rle in rles:
-                        m += xtcocotools.mask.decode(rle)
+                        m += pycocotools.mask.decode(rle)
 
         return m < 0.5
 

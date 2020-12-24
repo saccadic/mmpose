@@ -7,7 +7,7 @@ import json_tricks as json
 import numpy as np
 from poseval import eval_helpers
 from poseval.evaluateAP import evaluateAP
-from xtcocotools.coco import COCO
+from pycocotools.coco import COCO
 
 from ....core.post_processing import oks_nms, soft_oks_nms
 from ...registry import DATASETS

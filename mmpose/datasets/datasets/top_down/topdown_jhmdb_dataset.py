@@ -4,7 +4,7 @@ from collections import OrderedDict
 
 import json_tricks as json
 import numpy as np
-from xtcocotools.coco import COCO
+from pycocotools.coco import COCO
 
 from mmpose.core.evaluation.top_down_eval import keypoint_pck_accuracy
 from ...registry import DATASETS

@@ -2,8 +2,8 @@ import os
 import warnings
 
 import numpy as np
-from xtcocotools.coco import COCO
-from xtcocotools.cocoeval import COCOeval
+from pycocotools.coco import COCO
+from pycocotools.cocoeval import COCOeval
 
 from ...registry import DATASETS
 from .topdown_coco_dataset import TopDownCocoDataset

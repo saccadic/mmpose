@@ -1,7 +1,7 @@
 import os
 from argparse import ArgumentParser
 
-from xtcocotools.coco import COCO
+from pycocotools.coco import COCO
 
 from mmpose.apis import (inference_bottom_up_pose_model, init_pose_model,
                          vis_pose_result)
